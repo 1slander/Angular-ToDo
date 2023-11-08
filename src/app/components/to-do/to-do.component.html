@@ -1,0 +1,66 @@
+<main>
+  <header>
+    <h1>To Do List</h1>
+  </header>
+
+  <div class="app">
+    <section class="input_menu">
+      <label for="">Enter the task:</label>
+      <br />
+      <input type="text" [(ngModel)]="taskName" />
+      <button (click)="addTask()">Submit</button>
+    </section>
+
+    <section class="kaban">
+      <div class="todo_section whitebg">
+        <h3>To Do:</h3>
+
+        <div *ngFor="let item of taskList; let i = index">
+          <ul>
+            <ng-container *ngIf="item.status === 'Pending'">
+              <li>
+                {{ item.taskName }}
+              </li>
+              <button (click)="updateStatus(item)">Start</button>
+              <button class="delete" (click)="deleteTask(item)">Delete</button>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doing_section whitebg">
+        <h3>Doing:</h3>
+
+        <div *ngFor="let item of taskList; let i = index">
+          <ul>
+            <ng-container *ngIf="item.status === 'Doing'">
+              <li>
+                {{ item.taskName }}
+              </li>
+              <button (click)="updateStatus(item)">Complete</button>
+              <button class="delete" (click)="deleteTask(item)">Delete</button>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <div class="done_section whitebg">
+        <h3>Done:</h3>
+
+        <div *ngFor="let item of taskList; let i = index">
+          <ul>
+            <ng-container *ngIf="item.status === 'Done'">
+              <li [ngStyle]="{ color: 'red' }">
+                {{ item.taskName }}
+                <span>👍</span>
+              </li>
+              <button class="delete" (click)="deleteTask(item)">Delete</button>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    Develop by: <a href="https://github.com/1slander">Hector Gonzalez</a>
+  </footer>
+</main>

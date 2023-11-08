@@ -1,0 +1,153 @@
+:host {
+  --bg-color: #96d0e3;
+  --primary-color: #152e3c;
+  --secondary--color: #f3f8fc;
+  --contrast-color: #ffe96d;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.app {
+  flex-grow: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--secondary--color);
+}
+h3 {
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+a {
+  text-decoration: none;
+  font-weight: 400;
+  color: var(--secondary--color);
+  margin-left: 1em;
+}
+a:hover,
+a:focus {
+  color: var(--contrast-color);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--secondary--color);
+}
+
+button {
+  padding: 1em 2em;
+  border-radius: 5px;
+  border: 0;
+  background-color: var(--primary-color);
+  color: var(--contrast-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  background-color: var(--contrast-color);
+  color: var(--primary-color);
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+ul button {
+  margin-right: 0.5em;
+}
+li {
+  list-style: none;
+
+  padding-right: 1em;
+  font-size: 2.4rem;
+  color: var(--primary-color);
+}
+
+.whitebg {
+  background-color: var(--secondary--color);
+  padding: 0.75em 1.25em;
+  border-radius: 5px;
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: var(--secondary--color);
+  padding: 0.55em 0;
+}
+
+/* Input */
+.input_menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+}
+
+input {
+  padding: 0.5em 1em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.kaban {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.delete {
+  background-color: coral;
+  color: var(--secondary--color);
+}
+.delete:hover,
+.delete:focus {
+  background-color: rgb(223, 98, 53);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: var(--secondary--color);
+  background-color: #152e3c;
+  padding: 1em;
+}
+
+@media (min-width: 700px) {
+  .input_menu {
+    flex-direction: row;
+  }
+  .kaban {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .whitebg {
+    background-color: var(--secondary--color);
+    padding: 0.75em 1.25em;
+    border-radius: 5px;
+  }
+}
